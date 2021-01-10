@@ -41,6 +41,6 @@ Follow these steps for completing your project.
 
 ## Stretch Goals:
 
-- [ ] Incorporate a google font of your choosing
-- [ ] Convert your portfolio project (from last week) CSS into LESS. Introduce variables, mixins, nesting, etc.
+- [x] Incorporate a google font of your choosing
+- [x] Convert your portfolio project (from last week) CSS into LESS. Introduce variables, mixins, nesting, etc.
 - [ ] Create a link to the portfolio page and create a layout that would allow users to see your work. A good idea is to link projects back to their github repos so employers can see your code.
