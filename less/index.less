@@ -4,6 +4,8 @@
    License: none (public domain)
 */
 
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa&display=swap');
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -59,6 +61,7 @@ html, body {
 	font-size: 16px;
 	max-width: 100%;
 	color: #344d6b;
+	font-family: 'Comfortaa', arial;
 	a {
 		text-decoration: none;
 		color: #344d6b;
@@ -75,7 +78,6 @@ html, body {
 
 
 .container {
-	border: 1px solid red;
 	max-width: 720px;
 	margin: 0 auto;
 }
@@ -118,6 +120,10 @@ header {
 		font-size: 1rem;
 		font-weight: 600;
 		padding: .8rem;
+		&:hover {
+			color: red;
+			cursor: pointer;
+		}
 	}
 }
 
@@ -125,29 +131,19 @@ header {
 main {
 	flex-flow: column wrap;
 	padding: 20px;
-	article {
-	}
 	.title {
 		font-size: 2rem;
+		padding-top: 1rem;
+		padding-bottom: 1rem;
 	}
 	p {
 		font-size: 1rem;
 	}
 }
 
-.workhistory {
-	padding: 20px;
-	display: block;
-	width: 100%;
-	width: 100%;
-	caption {
-		font-size: 2rem;
-		text-align: left;
-	}
-}
 
 footer {
-	background-color: black;
+	background: #5c87bb;
 	color: white;
 	text-align: center;
 	height: 100px;
@@ -163,4 +159,74 @@ footer {
 		justify-content: flex-end;
 	}	
 }
+
+@breakpoint-alpha: 480px; // adjust to your needs
+
+.workhistory {
+	padding: 20px;
+	display: block;
+	width: 100%;
+	caption {
+		font-size: 2rem;
+		text-align: left;
+	}
+	margin: 1em 0;
+	min-width: 300px; // adjust to your needs
+  
+  tr {
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  th {
+    display: none; // for accessibility, use a visually hidden method here instead! Thanks, reddit!   
+  }
+  
+  td {
+    display: block; 
+    
+    &:first-child {
+      padding-top: .5em;
+    }
+    &:last-child {
+      padding-bottom: .5em;
+    }
+
+    &:before {
+      content: attr(data-th)": "; // who knew you could do this? The internet, that's who.
+      font-weight: bold;
+
+      // optional stuff to make it look nicer
+      width: 6.5em; // magic number :( adjust according to your own content
+      display: inline-block;
+      // end options
+      
+      @media (min-width: @breakpoint-alpha) {
+        display: none;
+      }
+    }
+  }
+  
+  th, td {
+    text-align: left;
+    
+    @media (min-width: @breakpoint-alpha) {
+      display: table-cell;
+      padding: .25em .5em;
+      
+      &:first-child {
+        padding-left: 0;
+      }
+      
+      &:last-child {
+        padding-right: 0;
+      }
+    }
+
+  }
+}
+  
+  
+
+
 

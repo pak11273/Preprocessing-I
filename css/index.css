@@ -2,6 +2,13 @@
    v2.0 | 20110126
    License: none (public domain)
 */
+@font-face {
+  font-family: 'Comfortaa';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/comfortaa/v29/1Pt_g8LJRfWJmhDAuUsSQamb1W0lwk4S4WjMPrQ.ttf) format('truetype');
+}
 html,
 body,
 div,
@@ -137,6 +144,7 @@ body {
   font-size: 16px;
   max-width: 100%;
   color: #344d6b;
+  font-family: 'Comfortaa', arial;
 }
 html a,
 body a {
@@ -153,7 +161,6 @@ body a:hover {
   color: #6d9eda;
 }
 .container {
-  border: 1px solid red;
   max-width: 720px;
   margin: 0 auto;
 }
@@ -196,27 +203,24 @@ header button {
   font-weight: 600;
   padding: 0.8rem;
 }
+header button:hover {
+  color: red;
+  cursor: pointer;
+}
 main {
   flex-flow: column wrap;
   padding: 20px;
 }
 main .title {
   font-size: 2rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
 main p {
   font-size: 1rem;
 }
-.workhistory {
-  padding: 20px;
-  display: block;
-  width: 100%;
-}
-.workhistory caption {
-  font-size: 2rem;
-  text-align: left;
-}
 footer {
-  background-color: black;
+  background: #5c87bb;
   color: white;
   text-align: center;
   height: 100px;
@@ -229,5 +233,62 @@ footer p {
   nav {
     flex-flow: row wrap;
     justify-content: flex-end;
+  }
+}
+.workhistory {
+  padding: 20px;
+  display: block;
+  width: 100%;
+  margin: 1em 0;
+  min-width: 300px;
+}
+.workhistory caption {
+  font-size: 2rem;
+  text-align: left;
+}
+.workhistory tr {
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+}
+.workhistory th {
+  display: none;
+}
+.workhistory td {
+  display: block;
+}
+.workhistory td:first-child {
+  padding-top: 0.5em;
+}
+.workhistory td:last-child {
+  padding-bottom: 0.5em;
+}
+.workhistory td:before {
+  content: attr(data-th) ": ";
+  font-weight: bold;
+  width: 6.5em;
+  display: inline-block;
+}
+@media (min-width: 480px) {
+  .workhistory td:before {
+    display: none;
+  }
+}
+.workhistory th,
+.workhistory td {
+  text-align: left;
+}
+@media (min-width: 480px) {
+  .workhistory th,
+  .workhistory td {
+    display: table-cell;
+    padding: 0.25em 0.5em;
+  }
+  .workhistory th:first-child,
+  .workhistory td:first-child {
+    padding-left: 0;
+  }
+  .workhistory th:last-child,
+  .workhistory td:last-child {
+    padding-right: 0;
   }
 }
